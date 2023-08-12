@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text List with Add and Remove</title>
+</head>
+<body>
+    <h2>Add and Remove Text from start and end</h2>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <button id="addButton">Add Text</button>
+    <button id="removeButton">Remove Element</button>
+
+    <ul id="textList"></ul>
+
+    <script>
+        const textInput = document.getElementById("textInput");
+        const addButton = document.getElementById("addButton");
+        const removeButton = document.getElementById("removeButton");
+        const textList = document.getElementById("textList");
+
+        addButton.addEventListener("click", () => {
+            const text = textInput.value.trim();
+            if (text !== "") {
+                const listItem = document.createElement("li");
+                listItem.textContent = text;
+                textList.appendChild(listItem);
+                textInput.value = "";
+            }
+        });+
+
+        removeButton.addEventListener("click", () => {
+            const listItems = textList.getElementsByTagName("li");
+            if (listItems.length > 0) {
+                textList.removeChild(listItems[0]);
+
+                textList.removeChild(listItems[listItems.length-1]);
+            }
+        });
+    </script>
+</body>
+</html>

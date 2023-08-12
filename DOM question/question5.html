@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Changing Div Example</title>
+    <style>
+        #colorDiv {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="colorDiv"></div>
+
+    <script>
+        const colorDiv = document.getElementById("colorDiv");
+
+        colorDiv.addEventListener("mouseover", function() {
+            colorDiv.style.backgroundColor = "blue";
+        });
+
+        colorDiv.addEventListener("mouseout", function() {
+            colorDiv.style.backgroundColor = "orange";
+        });
+
+         document.addEventListener("keyup", function() {
+            colorDiv.style.backgroundColor = "green";
+         });
+
+
+        document.addEventListener("keydown", function() {
+            colorDiv.style.backgroundColor = "yellow";
+        });
+    </script>
+</body>
+</html>

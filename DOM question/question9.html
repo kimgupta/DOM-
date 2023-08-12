@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paragraph Retriever</title>
+</head>
+<body>
+  <h1>Paragraph Retriever</h1>
+  
+  <label for="indexInput">Enter Index:</label>
+  <input type="number" id="indexInput" min="0">
+  <button onclick="retrieveParagraph()">Retrieve</button>
+  
+  <div id="paragraphList">
+    <p>This is the first paragraph.</p>
+    <p>This is the second paragraph.</p>
+    <p>This is the third paragraph.</p>
+    <p>This is the fourth paragraph.</p>
+  </div>
+  
+  <div id="output">
+    <h2>Selected Paragraph:</h2>
+    <p id="selectedParagraph"></p>
+  </div>
+2
+  <script>
+    function retrieveParagraph() {
+      const indexInput = document.getElementById("indexInput");
+      const selectedParagraph = document.getElementById("selectedParagraph");
+      const paragraphList = document.getElementById("paragraphList").getElementsByTagName("p");
+
+      const index = parseInt(indexInput.value);
+
+      if (index >= 0 && index < paragraphList.length) {
+        selectedParagraph.textContent = paragraphList[index].textContent;
+      } else {
+        selectedParagraph.textContent = "Invalid index. Please enter a valid index.";
+      }
+    }
+  </script>
+</body>
+</html>

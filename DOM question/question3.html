@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text and Image Example</title>
+</head>
+<body>
+    <label for="nameInput">Enter Name:</label>
+    <input type="text" id="nameInput">
+    <button id="printNameButton">Print Name</button>
+    <div id="outputDiv1"></div>
+
+    <br><br>
+
+    <input type="file" id="imageInput" accept=".jpg, .png">
+    <button id="showImageButton">Show Image</button>
+    <div id="outputDiv"></div>
+
+    <script>
+        // Get references to the input elements and the output div
+        const nameInput = document.getElementById("nameInput");
+        const printNameButton = document.getElementById("printNameButton");
+        const imageInput = document.getElementById("imageInput");
+        const showImageButton = document.getElementById("showImageButton");
+        const outputDiv1 = document.getElementById("outputDiv1");
+        const outputDiv = document.getElementById("outputDiv");
+
+        // Add click event listener to printNameButton
+        printNameButton.addEventListener("click", function() {
+            const enteredName = nameInput.value;
+            outputDiv1.textContent = "Entered Name: " + enteredName;
+        });
+
+        // Add click event listener to showImageButton
+        showImageButton.addEventListener("click", function() {
+            
+             
+                 const selectedFile = imageInput.files[0];
+                 const imgElement = document.createElement("img");
+                 imgElement.src = URL.createObjectURL(selectedFile);
+                 outputDiv.appendChild(imgElement);
+                
+                 
+        });
+    </script>
+</body>
+</html>

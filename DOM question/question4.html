@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Swapping Example</title>
+    <style>
+        .image-container {
+            display: inline-block;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q1.jpeg" alt="Image 1" id="image1" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q2.jpeg"alt="Image " id="image 2" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q3.jpeg"alt="Image " id="image 3" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q4.jpeg"alt="Image " id="image 4" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q5.jpeg"alt="Image " id="image 5" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q7.jpeg"alt="Image " id="image 6" class="swap-image">
+    </div>
+    <div class="image-container">
+        <img src="C:\Users\Lenovo\Desktop\q8.jpeg"alt="Image " id="image 7" class="swap-image">
+    </div>
+     <button id="btn">Change</button>
+
+    <script>
+       btn.addEventListener("click",function(){
+        const swapImages = document.querySelectorAll('.swap-image');
+
+        swapImages.forEach((image) => {
+                const randomIndex = Math.floor(Math.random() * swapImages.length);
+                const currentImageIndex = Array.from(swapImages).indexOf(image);
+
+                // Swap the source of the clicked image with the source of the randomly chosen image
+                const tempSrc = swapImages[randomIndex].src;
+                swapImages[randomIndex].src = image.src;
+                image.src = tempSrc;
+            });
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Change All Images Example</title>
+</head>
+<body>
+    <img class="image" src="C:\Users\Lenovo\Desktop\q1.jpeg" >
+    <img class="image" src="C:\Users\Lenovo\Desktop\q1.jpeg" >
+  <img class="image" src="C:\Users\Lenovo\Desktop\q1.jpeg" >
+  <img class="image" src="C:\Users\Lenovo\Desktop\q1.jpeg" >
+  <img class="image" src="C:\Users\Lenovo\Desktop\q1.jpeg" >
+  <button id="changeButton">Change All Images</button>
+
+  <script>
+    const imageElements = document.querySelectorAll(".image");
+    const changeButton = document.getElementById("changeButton");
+
+    changeButton.addEventListener('click', function(){
+              imageElements.forEach(image => {
+             image.src = "C:/Users/Lenovo/Desktop/q2.jpeg";
+
+    })
+});
+  </script>
+</body>
+</html>
